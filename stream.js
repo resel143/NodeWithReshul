@@ -22,6 +22,8 @@ server.on('request',(req, res)=>{
     rstream.on('end',()=>{
         res.end();
     })
+//     Another way to do stream is by using 
+    rstream.pipe(res);
 })
 
 server.listen(8000, '127.0.0.1');
